@@ -1,0 +1,83 @@
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 90vh;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(6, 83, 97, 0.616);
+}
+
+.content {
+    position: absolute;
+    left: 42%;
+    top: 40%;
+    width: 100%;
+    height: 90vh;
+    color: white;
+}
+
+.content>button {
+    margin: 1rem 2.5rem;
+}
+
+
+.cardz {
+    width: 20rem;
+    height: 30rem;
+    background-color: #f2f2f2;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 2px 11px 32px 0px rgba(0, 140, 255, 0.719);
+}
+
+
+
+.image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    top: 0%;
+}
+
+.pro-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2rem 5rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    padding-top: 1rem;
+    font-size: 24px;
+    font-weight: 600;
+    color: blue;
+}
+
+.comrice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.company{
+    color: orangered;
+    font-weight: 900;
+}
+
+.price{
+    font-weight: 900;
+    font-size: 24px;
+}

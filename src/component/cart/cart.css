@@ -1,0 +1,20 @@
+.item{
+    display: flex;
+    justify-content: space-around;
+}
+.cp-title{
+    padding-bottom: 0px;
+    margin-bottom: 0%;
+}
+.cp-company{
+    padding-top: 0px;
+}
+
+.quantity-counter{
+    display: flex;
+}
+
+.quantity-counter>button{
+    width: 4rem;
+    height: 2rem;
+}
