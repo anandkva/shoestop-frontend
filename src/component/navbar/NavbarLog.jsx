@@ -11,23 +11,33 @@ const NavbarLog = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand onClick={()=>navigate("/home")}>ShoeStop</Navbar.Brand>
+        <Navbar.Brand onClick={() => navigate("/home")}>ShoeStop</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto">
-            <Link to="/home">Home</Link> {" "}
-            <Link to="/cart">Cart</Link>
-          </Nav>
-          {hasToken && (
-            <Nav className="mx-5">
-              <Button
-                variant="light px-4"
-                onClick={() => {
-                  localStorage.removeItem("token");
-                  navigate("/login");
-                }}
-              >
-                log out
+          {hasToken ? (
+            <>
+              <Nav className="m-auto">
+                <Link to="/home">Home</Link> <Link to="/cart">Cart</Link>
+              </Nav>
+              <Nav className="mx-5">
+                <Button
+                  variant="light px-4"
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    navigate("/login");
+                  }}
+                >
+                  log out
+                </Button>
+              </Nav>
+            </>
+          ) : (
+            <Nav>
+              <Button variant="light px-4" href="/login">
+                login
+              </Button>
+              <Button variant="outline-light px-4" href="/signup">
+                Signup
               </Button>
             </Nav>
           )}
