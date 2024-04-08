@@ -25,6 +25,7 @@ const Login = () => {
           if (res.status === 200 || res.status === 201) {
             
               localStorage.setItem('token', res.data.token);
+              console.log(res.data)
               setToken(res.data.token)
               navigate('/home')
           } else {
@@ -43,4 +44,4 @@ const Login = () => {
     )
   }
 
-export default Login
+export default Login;

@@ -28,9 +28,7 @@ const Signup = () => {
     axios.post(url, { name, email, password })
     .then(res => {
         if (res.status === 200 || res.status === 201) {
-            localStorage.setItem('token', JSON.stringify(res.data.token));
-            console.log(res.data); // Log the response data if the request was successful.
-            navigate('/')
+            navigate('/login')
         } else {
             console.log('Request failed with status:', res.status);
         }
