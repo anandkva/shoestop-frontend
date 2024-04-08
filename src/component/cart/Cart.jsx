@@ -8,14 +8,14 @@ const Cart = () => {
 
   const url = "http://localhost:5000/api/addcart"
 
-  const { cartProduct, setCartProducts,getcart} = useContext(productContext)
+  const { cartProduct, setCartProducts, getcart} = useContext(productContext)
   const [total, setTotal] = useState(0)
 
   
 
-  // useEffect(()=>{
-  //   getcart()
-  // },[])
+  useEffect(()=>{
+    getcart()
+  },[])
 
   useEffect(() => {
     

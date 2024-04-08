@@ -1,19 +1,21 @@
+import { useNavigate, Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 
 function CollapsibleExample() {
+    const navigate = useNavigate();
+   
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
             <Container>
-                <Navbar.Brand href="/">ShoeStop</Navbar.Brand>
+                <Navbar.Brand onClick={()=>navigate("/home")}>ShoeStop</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="m-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        {/* <Nav.Link href="/fav">Favourites</Nav.Link> */}
-                        <Nav.Link href="/cart">Cart</Nav.Link>
+                        <Link to="/home">Home</Link>
+                        <Link to="/cart">Cart</Link>
                        
                     </Nav>
                     <Nav>

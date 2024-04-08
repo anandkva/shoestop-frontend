@@ -20,13 +20,11 @@ const Login = () => {
     }
   
     const submitHandler = () => {
-      // console.log(name, mail, password)
       axios.post(url, { name, email, password })
       .then(res => {
           if (res.status === 200 || res.status === 201) {
             
               localStorage.setItem('token', res.data.token);
-              console.log(res.data); 
               setToken(res.data.token)
               navigate('/home')
           } else {

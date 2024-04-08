@@ -11,6 +11,7 @@ const Product = () => {
     const { token } = useContext( productContext )
 
     const fetchData = async () => {
+       
         await axios.get("http://localhost:5000/api/getproducts")
             .then(res => setProducts(res.data))
     }
@@ -45,11 +46,11 @@ const Product = () => {
           });
     }
 
-    const addtoCart = (image,title,company,price) =>{
+    const addtoCart = (id, image,title,company,price) =>{
         console.log(token);
         
         axios.post('http://localhost:5000/api/addcart', {
-            image,title,company,price
+            id, image,title,company,price
           },{
             headers : {
                 Authorization: `Bearer ${token}`,
@@ -90,7 +91,7 @@ const Product = () => {
                                 <p className="price text-dark">Rs:{li.price}</p>
                                 </div>
                                 <div className="btns">
-                                    <Button variant='success px-4' onClick={()=>{ addtoCart(li.image,li.title,li.company,li.price) }}> Add to Cart </Button>
+                                    <Button variant='success px-4' onClick={()=>{ addtoCart(li._id, li.image,li.title,li.company,li.price) }}> Add to Cart </Button>
                                 </div>
                             </div>
                         })
