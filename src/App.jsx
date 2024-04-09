@@ -8,26 +8,25 @@ import Cart from "./component/cart/Cart";
 import Signup from "./component/signup/Signup";
 import Login from "./component/login/Login";
 import NavbarLog from "./component/navbar/NavbarLog";
+import PrivateRoutes from "../utils/PrivateRoutes";
 
 const App = () => {
-  const hasToken = !!localStorage.getItem("token");
-
   return (
-    <Router>
-      <NavbarLog />
-      <Routes>
-        {hasToken ? (
-          <Route path="/" element={<Home />} />
-        ) : (
-          <Route path="/" element={<Login />} />
-        )}
-        <Route path="/home" element={<Home />} />
-        <Route path="/fav" element={<Fav />} /> {/* Add your Fav component */}
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <NavbarLog />
+        <Routes>
+          <Route element={<PrivateRoutes />}>
+            <Route element={<Home />} path="/" exact />
+            <Route element={<Home />} path="/home" exact />
+            <Route element={<Fav />} path="/fav" exact />
+            <Route element={<Cart />} path="/cart" exact />
+          </Route>
+          <Route element={<Signup />} path="/signup" />
+          <Route element={<Login />} path="/login" />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 
