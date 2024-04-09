@@ -33,12 +33,8 @@ const NavbarLog = () => {
             </>
           ) : (
             <Nav>
-              <Button variant="light px-4" href="/login">
-                login
-              </Button>
-              <Button variant="outline-light px-4" href="/signup">
-                Signup
-              </Button>
+              <Link to="/login">login</Link>
+              <Link to="/signup">Signup</Link>
             </Nav>
           )}
         </Navbar.Collapse>
