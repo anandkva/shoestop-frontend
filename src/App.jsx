@@ -9,6 +9,7 @@ import Signup from "./component/signup/Signup";
 import Login from "./component/login/Login";
 import NavbarLog from "./component/navbar/NavbarLog";
 import PrivateRoutes from "../utils/PrivateRoutes";
+import SinglePage from "./component/single";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route element={<Home />} path="/home" exact />
             <Route element={<Fav />} path="/fav" exact />
             <Route element={<Cart />} path="/cart" exact />
+            <Route element={<SinglePage />} path="/single" exact />
           </Route>
           <Route element={<Signup />} path="/signup" />
           <Route element={<Login />} path="/login" />
